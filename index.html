@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swipeable Certificate Carousel</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="backgroundMusic" loop>
+      <source src="song.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <!-- New intro animation container -->
+    <div class="intro-animation" id="introAnimation">
+      <p class="intro-text" id="introText"> To the most hardworking, beautiful, and kind-hearted person I've ever known. I proudly present this in celebration of all your achievements
+      </p>
+    </div>
+
+    <!-- New start button -->
+    <button class="start-button" id="startButton">
+      Unveil Your Celebration
+    </button>
+
+    <div class="carousel">
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Most Beautiful Soul Award</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Awarded to the one whose kindness and warmth radiate through
+                every action, reminding the world of the beauty that lies within
+                the heart.
+              </p>
+              <div class="medal" aria-label="Medal Icon">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date1"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your kindness shines brighter than anything else, and it’s this
+                kindness that leads you to this well-deserved award. You embody
+                the true beauty of the heart, always staying kind and
+                compassionate, even when faced with life's toughest challenges.
+                I’m incredibly proud of you for being the most beautiful person
+                I know, inside and out. Your heart is a gift to the world.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Unbreakable Spirit of the Year</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Recognizing the indomitable spirit that refuses to bend or
+                break, no matter how fierce the storm may be. You are a living
+                testament to perseverance.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date2"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your bravery and dedication have led you to this moment. Your
+                spirit remains unwavering, always pushing forward and pursuing
+                your dreams, no matter the obstacles. Even on the toughest days,
+                you refuse to give up and keep fighting. This award celebrates
+                your unshakable strength and determination to never give up on
+                yourself.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">The Softest Fighter Award</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Awarded to the one who combines gentleness with unyielding
+                courage, proving that the softest hearts are often the strongest
+                in battle.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date3"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your soft heart and unwavering courage have led you to this
+                award. Your gentleness is a unique strength that makes you stand
+                out, even in the most difficult times. You are a gentle soul who
+                consistently puts others first, showing that true strength comes
+                from compassion. I am so proud of you for being the softest
+                fighter I know, always fighting with love and kindness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 4 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">The Gentle Brilliance Award</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                For the individual who shines brightly, not through harshness or
+                noise, but through a quiet, steady brilliance that touches
+                everyone they meet.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date4"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your gentleness and brilliance have led you to this
+                well-deserved award. Your kind heart and brilliant personality
+                make you shine brightly in every moment. Keep nurturing that
+                gentle heart and brilliant mind, and you will forever be a
+                shining star in my life, lighting the way for others with your
+                warmth and wisdom.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 5 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Resilience and Growth Award</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Presented to the person who shows incredible growth through
+                life’s challenges, turning adversity into opportunity with each
+                step they take.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date5"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your resilience and growth have led you to this award. Your
+                ability to overcome challenges and turn them into opportunities
+                is truly remarkable. Keep shining bright, and know that you are
+                an inspiration to everyone around you. Your strength is a beacon
+                of hope, and your journey reminds us all that growth comes from
+                overcoming.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 6 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Shining Through the Storms Award</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                For the one who finds a way to shine even in the darkest
+                moments, reminding us all that light can be found, no matter the
+                circumstance.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date6"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your ability to shine even in the darkest moments is truly
+                inspiring. That's why you deserve this award. Your light is a
+                beacon of hope for everyone around you, reminding us all that
+                even in the toughest times, we can find a way to shine. Keep
+                being the incredible person you are, and never lose that spark
+                of light within you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 7 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">From Struggle to Strength Honor</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Recognizing the strength born from hardship, and the inspiring
+                journey of turning struggles into stepping stones toward
+                greatness.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date7"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                You have the ability to turn your struggles into opportunities
+                for strength and growth. That's why you deserve this award. Your
+                journey is a testament to the power of resilience and
+                determination, and I am so proud of you for turning your
+                struggles into strength. Keep going, and remember that every
+                challenge you face only makes you stronger.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 8 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Courageous Learner of the Year</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                For the individual who approaches each challenge with an open
+                heart and mind, learning, evolving, and growing with every
+                lesson life offers.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date8"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your willingness to learn and grow from every experience is a
+                true testament to your character. You approach each challenge
+                with an open heart and mind, always eager to learn and evolve.
+                This award celebrates your courage and dedication to personal
+                growth. Keep shining bright, and never stop learning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 9 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">The Girl Who Inspires Me Most</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Awarded to the one who inspires love, growth, and joy in the
+                heart of everyone around her; the muse to a never-ending story
+                of admiration.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date9"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                You never failed to inspire me to grow even stronger. That's why
+                you deserve this award. Your kindness, strength, and beauty
+                inspire me every day. You are the reason I strive to be better,
+                and I am so grateful to have you in my life. Keep shining
+                bright, and never forget how much you inspire those around you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 10 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">The Reason I’m Proud Every Day</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Presented to the one whose actions, heart, and journey make me
+                proud, not just today, but every day, for all that she is and
+                all she represents.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date10"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your journey, achievements and growth makes me proud every day.
+                That's why you deserve this award. Your heart and actions are a
+                constant reminder of the beauty in the world. I am so proud..
+                that you come this far. You deserve this award.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 11 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">The Bravest Student I Know</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Recognizing the student whose courage and resilience in the face
+                of challenges define what it means to be brave, inside and
+                outside the classroom.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date11"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Your braveness is what makes you truly strong. That is why you
+                deserve this award. You continue to face every challenge with
+                courage, and no matter how difficult things get, you never back
+                down. Your fearless spirit inspires everyone around you, and I’m
+                so proud of the strength you carry within.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 12 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Top Achiever of My Heart</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Awarded to the one who has excelled not just academically, but
+                in character, kindness, and strength of heart, setting the
+                highest example of achievement.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date12"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                You are the top achiever of my heart. That is why you deserve
+                this award. Your achievements, both in academics and in life,
+                are a true testament to your character and strength. You set the
+                highest example of what it means to be a top achiever, and I am
+                so proud of you for everything you have accomplished.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 13 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Best Leadership Award</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Awarded to the one who has led not only with excellence, but
+                with kindness, character, and strength of heart; setting the
+                highest example of true leadership.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date13"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                You lead with excellence and kindness. That is why you deserve
+                this award. Your leadership is a true testament to your
+                character and strength. You set the highest example of what it
+                means to be a leader, and I am so proud of you for everything
+                you have accomplished.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 14 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Class President of My Heart</p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                In honor of the one who leads with quiet courage, compassion,
+                and confidence; setting the example, inspiring others, and being
+                the heartbeat of every shared moment.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date14"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Not only have you succeeded as a leader in the classroom, you've
+                also led with love in my heart. Your strength, compassion, and
+                guidance are what set you apart. You are the truest example of
+                what it means to be a great leader- and that’s why you deserve
+                this award.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 15 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">Summa Cum Love-laude</p>
+              <h1>Certificate of Honor</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                In recognition of graduating top of her class in courage,
+                growth, and unconditional love; earning a degree in everything
+                that makes life beautiful.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date15"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                Not only did you succeed academically, you succeeded in ways grades could never measure. Her love, your strength, your
+                kindness, and your unwavering spirit have touched lives in the
+                most beautiful ways, especially mine. you has led with heart,
+                fought through silent battles, and continued to show up with
+                grace and purpose. That’s why you deserves the Summa CumLoved
+                Laude- the highest honor I could ever give, not for perfect test
+                scores, but for being the top achiever of my heart.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Certificate 16 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">
+                Certificate of Academic Brilliance and Emotional Bravery
+              </p>
+              <h1>Certificate of Achievement</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Recognizing your sharp mind and even stronger spirit for
+                succeeding in the classroom, and for showing unmatched courage
+                in the face of every challenge.
+              </p>
+              <div class="medal">🏅</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date16"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Note from Me</h2>
+              <p>
+                You’ve shown brilliance in every subject and every challenge
+                you've faced, but it’s your emotional bravery that truly stands
+                out. You've carried each struggle with grace, never letting it
+                define you, always rising with a heart full of strength. This
+                award honors not only your academic achievements, but also the
+                incredible courage it took to get there. You are not just a
+                scholar; you are a fighter, a leader, and an inspiration. You
+                deserve this more than anyone.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secret Certificate -->
+      <div
+        class="flip-card secret"
+        id="secretCert"
+        onclick="this.classList.toggle('flipped')"
+      >
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="certificate-container">
+              <p class="best-label">
+                The Phoenix Award – For Rising Every Time
+              </p>
+              <h1>Certificate of Distinction</h1>
+              <p class="recipient-name">Ionah Chris M. Andoy</p>
+              <p class="certificate-text">
+                Awarded to the one who continues to rise; no matter the fall.
+                For her strength in struggle, courage in silence, and the fire
+                that never fades.
+              </p>
+              <div class="medal" aria-label="Medal Icon">🎉</div>
+              <div class="signature-section">
+                <div class="signature">
+                  <p>Signed with love,</p>
+                  <p>Epi Louis Badilla</p>
+                </div>
+                <div class="date">
+                  <p>Date: <span id="date0"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="certificate-container">
+              <h2>Hidden Message 💌</h2>
+              <p>
+                A special award just for you, beautiful. You're a truly
+                remarkable person, you always keep rising despite the negative
+                things you encounter. I present you this certificate to honor
+                your dedication to keep fighting and rising up every time you
+                fall. Your strength and courage is unmatched, and it's a true
+                privilege to witness your journey. You don’t just overcome
+                obstacles; you turn them into stepping stones, always growing,
+                always glowing. This award is a small token of how proud I am of
+                you; not just for what you’ve achieved, but for who you are. You
+                inspire everyone around you, including me, and you will always
+                be my inspiration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reveal Button -->
+    <button class="reveal-btn" onclick="revealSecretCertificate()">
+      🎁 Reveal Surprise Certificate
+    </button>
+
+    <!-- Add this to your toggle section -->
+    <div class="toggle-section">
+      <button class="toggle-btn" id="momentsToggle">📸Your Achievements</button>
+    </div>
+
+    <!-- Add this at the end of your body, before scripts -->
+    <div id="momentsGallery" class="modal-page">
+      <div class="gallery-container">
+        <h2>My Records of your achievements</h2>
+        <div class="polaroid-container">
+          <div class="polaroid" onclick="expandImage(this)">
+            <img src="pic (1).jpg" alt="Special moment 1" />
+            <p class="caption">
+              Your first Achievement is to met someone like me😝
+            </p>
+          </div>
+          <div class="polaroid" onclick="expandImage(this)">
+            <img src="pic (2).jpg" alt="Special moment 2" />
+            <p class="caption">91 average?🫨 So proud of you beautiful</p>
+          </div>
+          <div class="polaroid" onclick="expandImage(this)">
+            <img src="pic (4).jpg" alt="Special moment 3" />
+            <p class="caption">
+              This time you got 92 average. I'm so proud that every quarter you
+              are improving❤️
+            </p>
+          </div>
+          <div class="polaroid" onclick="expandImage(this)">
+            <img src="pic (3).jpg" alt="Special moment 4" />
+            <p class="caption">
+              I know you’re gonna brag about the picture; I know you so well.
+              But let me tell you something… even without makeup, you're still
+              the most beautiful girl in the universe. Now, moving on to the
+              picture; I’m so deeply proud of you. You got a 93 average... 🫨
+              Damn.
+            </p>
+          </div>
+          <div class="polaroid" onclick="expandImage(this)">
+            <img src="pic (5).jpg" alt="Special moment 5" />
+            <p class="caption">
+              I am so proud of how much you’ve improved and learned over the
+              years. Keep pursuing the dreams you’re planning; don’t let
+              negative people bring you down. Just be yourself and continue
+              learning. Always remember that there’s someone who will support
+              you no matter what. I will always be here, proud of you and loving
+              you.
+            </p>
+          </div>
+        </div>
+
+        <!-- Add this modal for expanded images -->
+        <div id="imageModal" class="image-modal">
+          <span class="close-modal">&times;</span>
+          <img class="modal-content" id="expandedImage" />
+          <div id="modalCaption"></div>
+        </div>
+
+        <button class="back-btn">Back to Certificates</button>
+      </div>
+    </div>
+
+    <!-- AFFIRMATION SECTION -->
+    <div class="toggle-section">
+      <!-- Replace your existing "Show Affirmation" links with this -->
+      <button class="show-affirmation-btn">Phrases you need to read💌</button>
+
+      <div
+        id="affirmationPage"
+        style="
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to right, violet, pink);
+          z-index: 1000;
+          overflow-y: auto;
+          padding: 20px;
+          box-sizing: border-box;
+        "
+      >
+        <div class="container">
+          <h2>Notes you need to keep in mind 💌</h2>
+          <div class="affirmation-list">
+            <p>Your efforts are Seen and Worth It</p>
+            <p>You are Valuable</p>
+            <p>You are Loved</p>
+            <p>You are Seen</p>
+            <p>You are Understandable</p>
+            <p>You are Beautiful</p>
+            <p>You deserve to Love</p>
+            <p>You are Smart</p>
+            <p>You deserve Happiness</p>
+            <p>You deserve Peace</p>
+            <p>You are Worthy</p>
+            <p>Your will is Unshakeable</p>
+            <p>Even the moon envies your glow</p>
+            <p>You bloom with grace, even through the hardest seasons</p>
+            <p>Your existence is evidence that love lives in this world</p>
+          </div>
+          <button id="backToHome">Back to Home</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Before You Go Section -->
+    <div class="toggle-section">
+      <button class="toggle-btn" id="beforeYouGoToggle">
+        Just a Little Reminder..💌
+      </button>
+      <div id="beforeYouGoPage" class="modal-page">
+        <div class="container">
+          <h2>Just a Little Reminder...</h2>
+          <div class="handwritten-note">
+            <p>
+              A little reminder to always be gentle with yourself. I know how
+              fragile you can be, but that’s what makes your strength so
+              admirable. All of your hard work is worth it, and I’m incredibly
+              proud of you. I know it hasn’t been easy to accomplish everything
+              you’ve achieved, and that’s exactly why it’s so remarkable. Even
+              when you struggle, you keep fighting and never give up—and I
+              admire that about you so much. Just keep going, and move at your
+              own pace. You are doing great, and I’m so proud of you. And I’m
+              here to tell you that I love you.
+            </p>
+          </div>
+          <button class="back-btn">Back</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Message Section -->
+    <div class="toggle-section">
+      <button class="toggle-btn" id="finalMessageToggle">
+        My Personal Message 💖
+      </button>
+      <div id="finalMessagePage" class="modal-page">
+        <div class="container">
+          <h2>My Personal Message 💖</h2>
+          <div class="final-message">
+            <p>
+              Hello, Ionah Chris Andoy. 😝 Before you move to Grade 12; I just
+              want you to know, things might get harder; but I know you can
+              handle it. You’ve done it before; you’ll do it again. I believe in
+              you, always. If you ever feel overwhelmed; you’ll always have me
+              to lean on. I’ll be here to help you; cheer you on; and put a
+              smile on your face when things feel heavy. And don’t worry about
+              my problems; as long as you’re okay, I’m okay. That’s all that
+              matters to me. I will give you all the support you need; I’ll
+              always be here if you need help in CSS. 😝 And if you’re tired
+              from school, don’t hesitate to chat with me; I’ll treat you
+              milktea and takoyaki. 😊 Always prioritize your mental health;
+              your studies, and your happiness. You’re stronger than you think,
+              I know it. Keep doing what you love, what makes you happy, as long
+              as it doesn’t hurt you or anyone else. I’ll always give you my
+              full support. And if you ever feel like a burden... run to me. I
+              love your presence more than anyone. ❤️ Lastly, I want you to
+              know… I’m so proud of you. You’ve done so great these past years.
+              I wish for you to improve more, learn more, and grow even more —
+              in your own time. I’ll always give you the love you need. I’ll
+              always watch you grow.. I swear it. And I’ll always love you; even
+              without needing anything in return. 🤗 No matter what happens,
+              you’ll always have someone quietly cheering you on from the
+              background... that’s me. From Epi Louis Badilla, who loves you
+              more than anyone.🫣
+            </p>
+          </div>
+          <button class="back-btn">Back</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Made with ❤️ by [Your Name]</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
