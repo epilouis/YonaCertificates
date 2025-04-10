@@ -76,24 +76,87 @@ body {
   /* Purple to Blue */
   /* Lavender to Deep Purple */
 }
-
 .certificate-container {
   width: 100%;
   height: 100%;
-  padding: 25px;
+  padding: 15px 20px;
   box-sizing: border-box;
-  border: 5px solid #4caf50;
+  border: none; /* Remove basic border */
   border-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+              inset 0 0 50px rgba(255, 255, 255, 0.1),
+              0 0 0 5px rgba(186, 121, 255, 0.8),
+              0 0 0 6px rgba(255, 215, 0, 0.5); /* Elegant double border effect */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  background: linear-gradient(to right, #ba79ff, #a66dd8, #8800a0);
-  /* Purple to Blue */
-  /* Lavender to Deep Purple */
+  background: linear-gradient(135deg, #8800a0, #a66dd8, #ba79ff, #a66dd8, #8800a0);
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  overflow: hidden;
 }
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.certificate-container::before,
+.certificate-container::after,
+.certificate-container::before,
+.certificate-container::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50' fill='none'%3E%3Cpath d='M1 1C1 1 10 1 20 1C30 1 49 20 49 30C49 40 49 49 49 49' stroke='%23FFD700' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: contain;
+  opacity: 0.8;
+}
+
+.certificate-container::before {
+  top: 5px;
+  left: 5px;
+}
+
+.certificate-container::after {
+  top: 5px;
+  right: 5px;
+  transform: rotate(90deg);
+}
+
+.certificate-container::before {
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(180deg);
+}
+
+.certificate-container::after {
+  bottom: 5px;
+  left: 5px;
+  transform: rotate(270deg);
+}
+
+/* Add decorative border frame */
+.certificate-container::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
 .flip-card-back p{
  font-size: smaller;
   color: white;
@@ -101,6 +164,8 @@ body {
   line-height: 1;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
 }
+
+
 
 /* Restore certificate design */
 .flip-card-front .certificate-container {
@@ -118,23 +183,117 @@ body {
   /* Lavender to Deep Purple */
 }
 h1 {
-  font-size: 32px; /* Reduced from 36px */
+  font-size: 22px;
   color: #ffd700;
-  margin: 0 0 5px 0; /* Reduced bottom margin */
+  margin: 5px 0 8px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 215, 0, 0.5);
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 10px;
+  font-family: "Georgia", serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Decorative underline for title */
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.7), transparent);
+}
+
+/* Decorative elements around title */
+h1::before,
+h1::after {
+  content: "✦";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: rgba(255, 215, 0, 0.7);
+}
+
+h1::before {
+  left: -25px;
+}
+
+h1::after {
+  right: -25px;
 }
 
 .best-label {
-  font-size: 20px; /* Reduced from 22px */
+  font-size: 16px;
   color: #ffffff;
   font-weight: bold;
-  margin-bottom: 5px; /* Reduced from 10px */
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: inline-block;
+  padding: 0 30px;
 }
 
+/* Decorative elements for best label */
+.best-label::before,
+.best-label::after {
+  content: "★";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 215, 0, 0.8);
+  font-size: 14px;
+}
+
+.best-label::before {
+  left: 5px;
+}
+
+.best-label::after {
+  right: 5px;
+}
+
+/* Enhanced recipient name */
 .recipient-name {
-  font-size: 28px; /* Reduced from 32px */
+  font-size: 28px;
+  font-family: "Satisfy", cursive, "Georgia", serif;
   font-weight: bold;
   color: #ffffff;
-  margin: 5px 0; /* Reduced from 10px */
+  margin: 5px 0 10px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 0 10px;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+/* Elegant underline for recipient name */
+.recipient-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.recipient-name:hover {
+  transform: scale(1.05);
+}
+
+.recipient-name:hover::after {
+  transform: scaleX(1.1);
 }
 
 .certificate-text {
@@ -145,32 +304,87 @@ h1 {
 }
 
 .medal {
-  margin: 10px auto; /* Reduced from 20px */
-  width: 80px; /* Reduced from 100px */
-  height: 80px; /* Reduced from 100px */
-  background: gold;
+  margin: 10px auto;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle at 30% 30%, #ffd700, #b8860b);
   border-radius: 50%;
-  border: 5px solid #fff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), 
+              inset 0 0 15px rgba(255, 255, 255, 0.5),
+              0 5px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 24px;
   font-weight: bold;
   color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  position: relative;
+  animation: float 3s ease-in-out infinite, shine 5s infinite;
+  transform-style: preserve-3d;
+}
+
+/* Enhanced medal star */
+.medal::before {
+  content: "";
+  font-size: 32px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  animation: pulse 2s infinite;
+}
+
+/* Medal animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes shine {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.8); }
 }
 
 .signature-section {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px; /* Reduced from 30px */
-  font-size: 16px; /* Reduced from 18px */
-  color: #333;
+  margin-top: 5px; /* Minimal margin */
+  font-size: 12px; /* Smaller size */
+  color: #ffffff;
+  position: relative;
+  padding-top: 5px; /* Minimal padding */
 }
 
+/* Simplify decorative line above signatures */
+.signature-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 70%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+}
+
+/* Enhance signature and date */
 .signature p,
 .date p {
   margin: 2px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-family: "Georgia", serif;
+}
+
+.signature p:first-child,
+.date p:first-child {
+  font-weight: bold;
+  color: rgba(255, 215, 0, 0.9);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 button.reveal-btn {
@@ -1336,3 +1550,25 @@ a {
   top: 0;
   left: 0;
 }
+.certificate-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='1' fill='%23FFFFFF' fill-opacity='0.1'/%3E%3Ccircle cx='30' cy='40' r='0.5' fill='%23FFFFFF' fill-opacity='0.1'/%3E%3Ccircle cx='50' cy='20' r='0.8' fill='%23FFFFFF' fill-opacity='0.1'/%3E%3Ccircle cx='70' cy='70' r='0.7' fill='%23FFFFFF' fill-opacity='0.1'/%3E%3Ccircle cx='90' cy='30' r='0.6' fill='%23FFFFFF' fill-opacity='0.1'/%3E%3Ccircle cx='20' cy='80' r='0.5' fill='%23FFFFFF' fill-opacity='0.1'/%3E%3Ccircle cx='60' cy='10' r='0.9' fill='%23FFFFFF' fill-opacity='0.1'/%3E%3Ccircle cx='80' cy='60' r='0.8' fill='%23FFFFFF' fill-opacity='0.1'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Add a subtle glow effect to the certificate */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(186, 121, 255, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(186, 121, 255, 0.8); }
+}
+
+
+
+
+
